@@ -49,22 +49,31 @@ def get_neighbours(cell):
     x_0 = x > 0 #check if current position is not along top-most horizontal edge of floor plan
     x_max = x < number_of_rows - 1 #check if current position is not along bottom-most horizontal edge of floor plan
 
+    # Below is the check for valid neighbours
+    # The second condition is necessary because while checking a diagonal neighbour, we must make sure that
+    # the cells along the other diagonal do not contain separators as in that case the diagonal neighbour would be on the other side of the boundary
+    
+    #check validity of i-1,j-1 & i-1,j+1
     if(x_0):
-        # The second condition is necessary because while checking a diagonal neighbour, we must make sure that
-        # the cells along the other diagonal do not contain separators as in that case the diagonal neighbour would be on the other side of the boundary
+
         if(y_0 and not are_both_separators((x-1, y), (x, y-1))):
             neighbours.append((x-1, y-1))
         neighbours.append((x-1, y))
         if(y_max) and not are_both_separators((x-1, y), (x, y+1)):
             neighbours.append((x-1, y+1))
+
+    #check validity of i,j-1
     if(y_0):
         neighbours.append((x, y-1))
+
+    #check validity of i,j+1
     if(y_max):
         neighbours.append((x, y+1))
+
+    ##check validity of i+1,j-1 & i+1,j & i+1,j+1
     if(x_max):
         if(y_0 and not are_both_separators((x+1, y), (x, y-1))):
             neighbours.append((x+1, y-1))
-        
         neighbours.append((x+1, y))
         
         if(y_max and not are_both_separators((x+1, y), (x, y+1))):
