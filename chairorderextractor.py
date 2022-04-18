@@ -162,4 +162,4 @@ for key, value in chairorder.items():
     finishedorder.write(str(key) + ':' +'\n' + str(value).replace("{","").replace("}", "").replace("'","") + '\n')
 finishedorder.close()
 
-print("Brady Technologies Chair Order Extractor: Your file is ready. Please close this command line")
+print('\n\n\n'+"Brady Technologies Chair Order Extractor: Your file is ready. Please close this command line"+'\n\n\n')

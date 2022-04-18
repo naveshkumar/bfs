@@ -1,16 +1,22 @@
+*-----one time installation activity-----*
+
 Open Menu
-type 'cmd'
+type 'cmd' and press enter
 type 'pip install numpy'
 close command prompt
-open file location
+
+*-----running the code from command line-----*
+
+open input file location
 right click 'floorplan01.txt'
 find location in properties
 copy location
 open menu
-open cmd
+open cmd and press enter
 type 'cd' 
-right click the cursor
+right click the cursor press enter
 Expected behaviour : the path of file location is copied
-type "python chairorderextractor.py"
+console is now in the input file location
+type "python chairorderextractor.py" and press enter
 close command prompt
-chairorder.txt with results is now present at the same location
+chairorder.txt with results is now present at input file location
