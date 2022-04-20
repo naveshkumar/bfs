@@ -5,9 +5,16 @@ import numpy as np
 
 # read the text file into matrix
 floor_plan = [];
+maxlength = 0;
 with open('floorplan01.txt') as file:
     for line in file.read().splitlines():
-        floor_plan.append(list(line))
+        line_list = list(line)
+        if(len(line_list) > maxlength):
+            maxlength = len(line_list)
+        floor_plan.append(line_list)
+
+for _,row in enumerate(floor_plan):
+    row.extend(list(' '*(maxlength - len(row))))
 
 # seperator characters
 seperator = {'+', '-', '|', '/', '\\'}
