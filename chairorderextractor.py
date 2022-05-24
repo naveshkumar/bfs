@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Install numpy 
 # set wd same as the file location
 
@@ -178,4 +179,4 @@ for key, value in chairorder.items():
     finishedorder.write(str(key) + ':' +'\n' + str(value).replace("{","").replace("}", "").replace("'","") + '\n')
 finishedorder.close()
 
-print('\n\n\n'+"Brady Technologies Chair Order Extractor: Your file is ready. Please close this command line"+'\n\n\n')
+print('\n\n\n'+"Navesh Kumar Chair Order Extractor: Your file is ready. Please close this command line"+'\n\n\n')
